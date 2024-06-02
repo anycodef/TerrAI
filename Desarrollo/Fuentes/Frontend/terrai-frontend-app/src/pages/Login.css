@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
+/*--- Contenedor principal ---*/
 .login {
   width: 400px;
   padding: 12px 10px;
-  border: 1px solid var(--Logo-color-1, #293133);
+  border: 1px solid #293133;
   border-radius: 8px;
+  overflow-y: hidden;
 }
 
-.container-header {
+.login .container-header {
   display: flex;
   padding: 8px 24px;
   flex-direction: column;
@@ -17,7 +19,23 @@
   align-self: stretch;
 }
 
-.container-text {
+/*--- Logo ---*/
+
+.container-header .logo {
+  display: flex;
+  padding: 4px 120px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+
+/*--- Contenedor de los textos ---*/
+.container-header .container-text {
   display: flex;
   padding: 8px 16px;
   flex-direction: column;
@@ -46,22 +64,10 @@
   line-height: normal;
 }
 
-.logo {
+/*--- Contenedor de los campos de entrada ---*/
+.login .container-body {
   display: flex;
-  padding: 4px 120px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 100px;
-  height: 100px;
-}
-
-.container-body {
-  display: flex;
-  padding: 8px 50px;
+  padding: 8px 40px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -69,7 +75,8 @@
   align-self: stretch;
 }
 
-.input-box {
+.container-body .input-box {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -77,20 +84,33 @@
   align-self: stretch;
 }
 
+.input-box label {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 .input-box input {
   display: flex;
   height: 40px;
-  padding: var(--2xs, 10px);
+  padding: 10px;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+  border: none;
+  outline: none;
   align-self: stretch;
-  font-size: 18px;
+  font-size: 17px;
   border-radius: 8px;
   background: rgba(85, 85, 85, 0.21);
+  font-family: Poppins;
 }
 
-.forgot {
+.container-body .forgot {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -105,4 +125,63 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+/*--- Contenedor del boton de inicio de sesion ---*/
+.login .container-bottom {
+  display: flex;
+  padding: 16px 40px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  gap: 50px;
+}
+
+.container-bottom button {
+  display: flex;
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  color: var(--0, #fff);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 10px;
+  background: #753624;
+  cursor: pointer;
+}
+
+.container-bottom .register-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.register-link p a {
+  color: #4f4e4e;
+  text-align: center;
+  font-family: "Nunito";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
 }
