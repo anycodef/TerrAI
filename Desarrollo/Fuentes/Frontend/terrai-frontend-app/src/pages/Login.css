@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.login {
+  width: 400px;
+  padding: 12px 10px;
+  border: 1px solid var(--Logo-color-1, #293133);
+  border-radius: 8px;
+}
+
+.container-header {
+  display: flex;
+  padding: 8px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.container-text {
+  display: flex;
+  padding: 8px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.container-text h1 {
+  color: #000;
+  text-align: center;
+  font-family: "Nunito";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.container-text p {
+  color: #000;
+  text-align: center;
+  font-family: Nunito;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.logo {
+  display: flex;
+  padding: 4px 120px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.container-body {
+  display: flex;
+  padding: 8px 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  align-self: stretch;
+}
+
+.input-box input {
+  display: flex;
+  height: 40px;
+  padding: var(--2xs, 10px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  font-size: 18px;
+  border-radius: 8px;
+  background: rgba(85, 85, 85, 0.21);
+}
+
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.forgot a {
+  color: #4f4e4e;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
