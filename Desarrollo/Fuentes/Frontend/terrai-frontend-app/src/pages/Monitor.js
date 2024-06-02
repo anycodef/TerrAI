@@ -1,66 +1,59 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import MapboxDraw from  '@mapbox/mapbox-gl-draw';
+import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGVkcm9qb3N1ZSIsImEiOiJjbHZycDVsZ2cwcWthMmlvNXltZXQya2sxIn0.ULElXZA20UonSMICjccZ3w';
 
 const Monitor = () => {
-    useEffect(() => {
-        mapboxgl.accessToken = 'pk.eyJ1IjoicGVkcm9qb3N1ZSIsImEiOiJjbHZycDVsZ2cwcWthMmlvNXltZXQya2sxIn0.ULElXZA20UonSMICjccZ3w';
+    const mapContainerRef = useRef(null);
 
+    useEffect(() => {
         const map = new mapboxgl.Map( {
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
+            container: mapContainerRef.current,
+            style: 'mapbox://styles/mapbox/satellite-v9',
             projection: 'globe',
             zoom: 1,
             center: [30, 15]
         });
 
-        map.addControl(new mapboxgl.NavigationControl());
-        map.scrollZoom.disable();
+        const draw = new MapboxDraw();
+        map.addControl(draw);
 
-        map.on('style.load', () => {
+        const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        });
+
+        map.addControl(geocoder);
+
+        map.on('load', () => {
             map.setFog({});
         });
 
-        const secondsPerRevolution = 240;
-        const mapxSpinZoom = 5;
-        const slowSpinZoom = 3;
-        
-        let userInteracting = false;
-        const spinEnabled = true;
+        map.on('draw.create', updateArea);
+        map.on('draw.delete', updateArea);
+        map.on('draw.update', updateArea);
 
-        function spinGlobe() {
-            const zoom = map.getZoom();
-            if (spinEnabled && !userInteracting && zoom < mapxSpinZoom) {
-                let distancePerSecond = 360 / secondsPerRevolution;
-                if (zoom > slowSpinZoom) {
-                    const zoomDif = (mapxSpinZoom - zoom) / (mapxSpinZoom - slowSpinZoom);
-                    distancePerSecond *= zoomDif;
-                }
-                const center = map.getCenter();
-                center.lng -= distancePerSecond;
-                map.easeTo({ center, duration: 1000, easing: (n) => n });
+        function updateArea(e) {
+            const data = draw.getAll();
+            if (data.features.length > 0) {
+                const area = data.features[0];
+                console.log("Selected area: ", area);
+            } else {
+                console.log("No area slected");
             }
         }
 
-        map.on('mousedown', () => {
-            userInteracting = true;
-        });
-        map.on('dragstart', () => {
-            userInteracting = true;
-        });
-
-        map.on('moveend', () => {
-            spinGlobe();
-        });
-
-        spinGlobe();
+        return () => {
+            map.remove();
+        };
     }, []);
 
-    return (
-        <div style={{ margin: 0, padding: 0 }}>
-            <div id="map" style={{ position: 'absolute', top: 0, bottom: 0, width: '100%' }}></div>
-        </div>
-    );
+    return <div ref={mapContainerRef} style={{ width: "100%", height: "100vh" }} />;
 };
 
 export default Monitor;

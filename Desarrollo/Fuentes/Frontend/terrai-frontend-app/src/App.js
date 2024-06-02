@@ -42,7 +42,7 @@ function App() {
 
         <main className="app-main-body">
           <Routes>
-            <Route exact path="/" Component={Home} />
+            <Route exact  path="/" Component={Home} />
             <Route exact path="/about" Component={About} />
             <Route exact path="/contact" Component={Contact} />
             <Route exact path="/login" Component={Login} />
