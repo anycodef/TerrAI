@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import logo from "./terrAI.svg";
+import logo from "./Assets/terrAI.svg";
 
 const Login = () => {
   return (
