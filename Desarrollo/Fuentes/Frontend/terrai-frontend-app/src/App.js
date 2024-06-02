@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Sign_Up from "./pages/RegisterForm/Sign-Up";
 import RegisterForm from "./pages/RegisterForm/Register";
+import Monitor from "./pages/Monitor";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             la ruta signup después de register
             <Route exact path="/register" Component={RegisterForm} /> # Registra
             datos iniciales, luego, se dirige a /sign-up
+            <Route exact path="/to-monitor" Component={Monitor} />
           </Routes>
         </main>
 
