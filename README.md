@@ -1,80 +1,13 @@
-# terrAI - Requirements Gathering
+# Welcome to terrAI
+---
+>to profit the future
+---
 
-## Functional Requirements
+web-based application using AI to analyze soil erosion for construction suitability analysis.
 
-1. **AI Utilization:**
-   - The application must have access to AI to analyze a sequence of images and determine which areas are safer for construction or real estate investment, based on soil erosion.
+| ```.______...```<br>```/\__.._\..```<br>```\/_/\.\/..```<br>```...\.\_\..```<br>```....\/_/..```<br>```.______...```<br>```/\..___\..```<br>```\.\..__\..```<br>```.\.\_____\```<br>```..\/_____/```<br>```.______...```<br>```/\..==.\..```<br>```\.\..__<..```<br>```.\.\_\.\_\```<br>```..\/_/./_/```<br>```.______...```<br>```/\..==.\..```<br>```\.\..__<..```<br>```.\.\_\.\_\```<br>```..\/_/./_/```<br>```.______...```<br>```/\..__.\..```<br>```\.\..__.\.```<br>```.\.\_\.\_\```<br>```..\/_/\/_/```<br>```.__.......```<br>```/\.\......```<br>```\.\.\.....```<br>```.\.\_\....```<br>```..\/_/....```<br> | <br><br>```In the realm where data meets the land,```<br>```An application crafted by skilled hand,```<br>```To guide where buildings should arise,```<br>```With maps and insights, it’s truly wise.```<br><br>```Artificial minds scan soil’s embrace,```<br>```To find the perfect building place,```<br>```Erosion’s secrets, once concealed,```<br>```Now with precision, are revealed.```<br><br>```Accessible on devices wide,```<br>```With ease of use, it's our guide,```<br>```For real estate, it lights the way,```<br>```Ensuring smart choices every day.```<br><br>```In React Native, its code does shine,```<br>```Across both web and mobile, it aligns,```<br>```A scalable, maintainable dream,```<br>```In terrAI's vision, we believe.```<br><br>```Crafted with care, for future's sake,```<br>```With each analysis, decisions we make,```<br>```In lands of potential, near and far,```<br>```Guided by tech, like a northern star.```<br><br>~ GPT-4o |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-2. **Visualization of Interest Zones Map:**
-   - The application should be capable of displaying on a map the areas of interest for the user.
-
-3. **Display of User-selected Zone Details:**
-   - The application must showcase the conditions of the region selected by the user on the map.
-
-4. **Selection of Study Area on Map:**
-   - The application must allow the user to select an area or region on the map and display corresponding data.
-
-5. **Search Functionality:**
-   - The application should enable specific zone searches by entering addresses or place names.
-
-6. **Markers:**
-   - The application must allow adding markers on the map to indicate locations or areas for tracking.
-
-7. **Export Capability:**
-   - The application should permit data and analysis export in CSV or PDF formats.
-
-8. **History:**
-   - The application must maintain a history of queries.
-
-9. **Authentication and Authorization:**
-   - The application must implement an authentication mechanism to verify the user's identity before granting access to the data.
-
-## Non-functional Requirements
-
-1. **Design:**
-   - The application must be simple, minimalist, and elegant.
-   - The interface should be intuitive and user-friendly for non-technical individuals.
-   - The application must present all necessary information without overwhelming the user.
-
-2. **Compatibility:**
-   - The application must be compatible with any device with browser access, functioning as a Progressive Web App (PWA).
-
-3. **Scalability:**
-   - The system architecture should allow progressive user increment, utilizing a client-server architecture with an optimized backend.
-
-4. **Maintainability:**
-   - The application must be written using standards and diagrams facilitating constant maintainability, compatibility analysis, and error correction.
-
-5. **Accessibility:**
-   - The application must comply with web accessibility standards to be usable by individuals with visual disabilities (large fonts, prominent colors, etc.).
-
-## User Story
-
-1. The user logs in.
-2. The home screen is a Google Earth-style map covering most of the screen, with a search bar for references and a margin indicating the cost in credits for the selected area analysis. Below the cost is a button labeled "Analyze."
-3. The user searches for a reference in the search bar, and the map displays the entered zone.
-4. The user selects a polygonal area directly on the map, and the cost in credits updates.
-5. The user is satisfied and presses the analyze button.
-6. "Analyzing" screen appears.
-7. Results are displayed.
-
-## Project Description
-
-terrAI is a web-based application designed to assist users in identifying suitable areas for construction or real estate investment by analyzing soil erosion patterns using Artificial Intelligence (AI). The application provides a user-friendly interface with map visualization, search functionality, and the ability to select and analyze specific areas. It aims to be accessible, scalable, and maintainable, ensuring compatibility across various devices. terrAI is developed using React Native, making it suitable for both web and mobile platforms. 
-
-## Installation
-
-To install terrAI, simply clone this repository and follow the setup instructions in the README.md file. 
-
-## Usage
-
-After installation, users can access terrAI through a web browser. They can log in, search for specific areas, select regions for analysis, and view the results seamlessly through the intuitive interface.
-
-## Contributing
-
-Contributions to terrAI are welcome! Please refer to the contribution guidelines in the README.md file for more information on how to get involved.
 
 ## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
+This project is licensed under the Apache License - see the LICENSE.md file for details.
