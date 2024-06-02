@@ -1,3 +1,4 @@
 class AIService:
-    def analyze_images(self, images):
-        return 'análisis de imágenes completado'
+    def analyze_images(self, image_path):
+        # bla bla bla
+        return {"nivel de riesgo": "nivelr"}

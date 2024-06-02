@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from django.views import View
+from .ai_service import AIService
 
 class AIAnalysisView(View):
     def post(self, request):
@@ -11,4 +12,5 @@ class AIAnalysisView(View):
         return JsonResponse({'results': results})
 
     def analyze_images(self, images):
-        return 'análisis completado'
+        ai_service = AIService()
+        return ai_service.analyze_images(images)
