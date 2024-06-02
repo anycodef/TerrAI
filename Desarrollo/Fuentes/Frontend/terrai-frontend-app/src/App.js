@@ -6,7 +6,7 @@ import Contact from "./pages/Contact";
 import "./App.css";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import SignUp from "./pages/RegisterForm/Sign-Up";
+import Sign_Up from "./pages/RegisterForm/Sign-Up";
 import RegisterForm from "./pages/RegisterForm/Register";
 
 function App() {
@@ -32,23 +32,24 @@ function App() {
           </nav>
         </header>
 
-        <main>
+        <main className="app-main-body">
           <Routes>
             <Route exact path="/" Component={Home} />
             <Route exact path="/about" Component={About} />
             <Route exact path="/contact" Component={Contact} />
             <Route exact path="/login" Component={Login} />
             <Route exact path="/signup" Component={Signup} />
-            <Route exact path="/sign-up" Component={SignUp} /> # Se dirige hacia
+            <Route exact path="/sign-up" Component={Sign_Up} /> # Se dirige hacia
             la ruta signup después de register
             <Route exact path="/register" Component={RegisterForm} /> # Registra
             datos iniciales, luego, se dirige a /sign-up
           </Routes>
         </main>
 
-        <footer>
+        <footer className="app-footer">
           <p>Footer</p>
         </footer>
+
       </div>
     </Router>
   );
