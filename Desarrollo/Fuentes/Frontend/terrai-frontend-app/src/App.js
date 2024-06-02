@@ -21,13 +21,13 @@ function App() {
           
           <nav className='navigation'>
             <ul className='main-option option'>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/about'>About</Link></li>
-              <li><Link to='/contact'>Contact</Link></li>
+              <li><Link to='/'>Inicio</Link></li>
+              <li><Link to='/about'>Acerca de</Link></li>
+              <li><Link to='/contact'>Contacto</Link></li>
             </ul>
             <ul className='right-option option'>
-              <li><Link to='/login'>Log in</Link></li>
-              <li><Link to='/Signup'>Sign up</Link></li>
+              <li><Link to='/login'>Iniciar sesión</Link></li>
+              <li><Link to='/Signup'>Registrarse</Link></li>
             </ul>
           </nav>
         </header>
