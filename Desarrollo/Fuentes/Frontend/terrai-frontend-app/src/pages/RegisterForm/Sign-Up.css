@@ -192,13 +192,19 @@
   text-align: center;
 }
 
-.login-link p a {
+.login-link p {
+  font-family: Nunito;
+  font-weight: 500;
   color: #4f4e4e;
+}
+
+.login-link p a {
+  color: #753624;
   text-align: center;
   font-family: "Nunito";
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: normal;
 }
 
