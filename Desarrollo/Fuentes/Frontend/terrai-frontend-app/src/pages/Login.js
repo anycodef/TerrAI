@@ -25,14 +25,19 @@ const Login = () => {
             <input type="password" placeholder="Contraseña" required />
           </div>
           <div className="forgot">
-            <a href="Blanco">Olvidaste tu contraseña?</a>
+            <a href="Forgot">Olvidaste tu contraseña?</a>
           </div>
         </div>
-        <button type="submit">Iniciar sesión</button>
-        <div className="register-link">
-          <p>
-            No tienes una cuenta? <a href="Register">Registrate aquí</a>
-          </p>
+        <div class="container-bottom">
+          <button type="submit">Iniciar sesión</button>
+          <div className="register-link">
+            <p>
+              No tienes una cuenta?{" "}
+              <a href="Register">
+                <strong>Registrate aquí</strong>
+              </a>
+            </p>
+          </div>
         </div>
       </form>
     </div>
