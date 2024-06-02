@@ -2,7 +2,6 @@ import React from "react";
 import "./Register.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../Assets/terrAI.svg";
 
 const RegisterForm = () => {
   const [company, setCompany] = useState("");
@@ -29,7 +28,7 @@ const RegisterForm = () => {
     <div className="register">
       <div className="container-header">
         <div className="logo">
-          <img src={logo} alt="Logo" />
+          <img src='logo.svg' alt="Logo" />
         </div>
         <div className="container-text">
           <h1>Registrate aquí</h1>

@@ -6,38 +6,29 @@ import Contact from "./pages/Contact";
 import "./App.css";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import SignUp from "./pages/RegisterForm/SignUp";
+import SignUp from "./pages/RegisterForm/Sign-Up";
 import RegisterForm from "./pages/RegisterForm/Register";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <a href="/" className="logo-terrai">
-          <img src="logo.svg" alt="Logo Terrai" />
-        </a>
+      <div className='App'>
 
-        <header>
-          <nav className="navigation">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
+        <header className='app-header'>
+          <a href='/'>
+            <img src='logo.svg' alt='Logo Terrai' className='app-logo'/>
+          </a>
+          
+          <nav className='navigation'>
+            <ul className='main-option option'>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/about'>About</Link></li>
+              <li><Link to='/contact'>Contact</Link></li>
             </ul>
-          </nav>
-          <nav>
-            <li>
-              <Link to="/login">Log in</Link>
-            </li>
-            <li>
-              <Link to="/Signup">Sign up</Link>
-            </li>
+            <ul className='right-option option'>
+              <li><Link to='/login'>Log in</Link></li>
+              <li><Link to='/Signup'>Sign up</Link></li>
+            </ul>
           </nav>
         </header>
 

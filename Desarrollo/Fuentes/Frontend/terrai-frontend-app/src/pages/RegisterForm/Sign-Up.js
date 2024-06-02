@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./SignUp.css";
-import logo from "../Assets/terrAI.svg";
+import "./Sign-Up.css";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -54,7 +53,7 @@ const SignUp = () => {
     <div className="sign-up">
       <div className="container-header">
         <div className="logo">
-          <img src={logo} alt="Logo" />
+          <img src='logo.svg' alt="Logo" />
         </div>
         <div className="container-text">
           <h1>Registrate aquí</h1>

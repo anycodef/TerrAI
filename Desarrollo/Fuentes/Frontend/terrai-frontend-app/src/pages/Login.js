@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
-import logo from "../Assets/terrAI.svg";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -39,7 +38,7 @@ const LoginForm = () => {
     <div className="login">
       <div className="container-header">
         <div className="logo">
-          <img src={logo} alt="Logo" />
+          <img src='logo.svg' alt="Logo" />
         </div>
         <div className="container-text">
           <h1>Bienvenido</h1>
