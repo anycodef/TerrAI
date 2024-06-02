@@ -16,7 +16,9 @@ function App() {
 
         <header className='app-header'>
           <a href='/'>
-            <img src='logo.svg' alt='Logo Terrai' className='app-logo'/>
+            <div className="div-logo">
+              <img src='logo.svg' alt='Logo Terrai' className='app-logo'/>
+            </div>
           </a>
           
           <nav className='navigation'>
@@ -25,6 +27,11 @@ function App() {
               <li><Link to='/about'>Acerca de</Link></li>
               <li><Link to='/contact'>Contacto</Link></li>
             </ul>
+
+            <ul className="tool-option option">
+              <li><Link to='/to-monitor'>Monitorear</Link></li>
+            </ul>
+
             <ul className='right-option option'>
               <li><Link to='/login'>Iniciar sesión</Link></li>
               <li><Link to='/Signup'>Registrarse</Link></li>
