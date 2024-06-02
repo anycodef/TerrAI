@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 /*--- Contenedor principal ---*/
-.login {
+.sign-up {
   width: 400px;
   padding: 12px 10px;
   border: 1px solid #293133;
@@ -9,7 +9,7 @@
   overflow-y: hidden;
 }
 
-.login .container-header {
+.sign-up .container-header {
   display: flex;
   padding: 8px 24px;
   flex-direction: column;
@@ -65,7 +65,7 @@
 }
 
 /*--- Contenedor de los campos de entrada ---*/
-.login .container-body {
+.sign-up .container-body {
   display: flex;
   padding: 8px 40px;
   flex-direction: column;
@@ -114,29 +114,40 @@
   border: 1px solid rgba(85, 85, 85, 0.5);
 }
 
-.container-body .forgot {
+.payment-methods {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   align-self: stretch;
 }
 
-.forgot a {
-  color: #4f4e4e;
+.payment-methods button {
+  display: flex;
+  padding: 10px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  border-radius: 10px;
+  border: 1px solid #753624;
+  background: #fff;
+  color: #753624;
+  text-align: center;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
+  cursor: pointer;
 }
 
-.forgot a:hover {
-  text-decoration: underline;
+.payment-methods button:hover {
+  background: rgba(117, 54, 36, 0.15);
 }
 
-/*--- Contenedor del boton de inicio de sesion ---*/
-.login .container-bottom {
+/*--- Contenedor del boton de Registrarse ---*/
+.sign-up .container-bottom {
   display: flex;
   padding: 16px 40px;
   flex-direction: column;
@@ -171,16 +182,17 @@
   background: rgba(117, 54, 36, 0.9);
 }
 
-.container-bottom .register-link {
+.container-bottom .login-link {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
   align-self: stretch;
+  text-align: center;
 }
 
-.register-link p a {
+.login-link p a {
   color: #4f4e4e;
   text-align: center;
   font-family: "Nunito";
@@ -190,6 +202,6 @@
   line-height: normal;
 }
 
-.register-link p a:hover {
+.login-link p a:hover {
   text-decoration: underline;
 }
