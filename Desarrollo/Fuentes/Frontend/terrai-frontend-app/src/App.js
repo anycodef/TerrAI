@@ -5,7 +5,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import "./App.css";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import Sign_Up from "./pages/RegisterForm/Sign-Up";
 import RegisterForm from "./pages/RegisterForm/Register";
 import Monitor from "./pages/Monitor";
@@ -13,44 +12,52 @@ import Monitor from "./pages/Monitor";
 function App() {
   return (
     <Router>
-      <div className='App'>
-
-        <header className='app-header'>
-          <a href='/'>
+      <div className="App">
+        <header className="app-header">
+          <a href="/">
             <div className="div-logo">
-              <img src='logo.svg' alt='Logo Terrai' className='app-logo'/>
+              <img src="logo.svg" alt="Logo Terrai" className="app-logo" />
             </div>
           </a>
-          
-          <nav className='navigation'>
-            <ul className='main-option option'>
-              <li><Link to='/'>Inicio</Link></li>
-              <li><Link to='/about'>Acerca de</Link></li>
-              <li><Link to='/contact'>Contacto</Link></li>
+
+          <nav className="navigation">
+            <ul className="main-option option">
+              <li>
+                <Link to="/">Inicio</Link>
+              </li>
+              <li>
+                <Link to="/about">Acerca de</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contacto</Link>
+              </li>
             </ul>
 
             <ul className="tool-option option">
-              <li><Link to='/to-monitor'>Monitorear</Link></li>
+              <li>
+                <Link to="/to-monitor">Monitorear</Link>
+              </li>
             </ul>
 
-            <ul className='right-option option'>
-              <li><Link to='/login'>Iniciar sesión</Link></li>
-              <li><Link to='/Signup'>Registrarse</Link></li>
+            <ul className="right-option option">
+              <li>
+                <Link to="/login">Iniciar sesión</Link>
+              </li>
+              <li>
+                <Link to="/Signup">Registrarse</Link>
+              </li>
             </ul>
           </nav>
         </header>
 
         <main className="app-main-body">
           <Routes>
-            <Route exact  path="/" Component={Home} />
+            <Route exact path="/" Component={Home} />
             <Route exact path="/about" Component={About} />
             <Route exact path="/contact" Component={Contact} />
             <Route exact path="/login" Component={Login} />
-            <Route exact path="/signup" Component={Signup} />
-            <Route exact path="/sign-up" Component={Sign_Up} /> # Se dirige hacia
-            la ruta signup después de register
-            <Route exact path="/register" Component={RegisterForm} /> # Registra
-            datos iniciales, luego, se dirige a /sign-up
+            <Route exact path="/signup" Component={RegisterForm} />
+            <Route exact path="/register" Component={Sign_Up} />
             <Route exact path="/to-monitor" Component={Monitor} />
           </Routes>
         </main>
@@ -58,7 +65,6 @@ function App() {
         <footer className="app-footer">
           <p>Footer</p>
         </footer>
-
       </div>
     </Router>
   );
