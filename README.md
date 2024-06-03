@@ -14,7 +14,7 @@ web-based application using AI to analyze soil erosion for construction suitabil
 
 1. 
 ```
-cd ./terrAI/Desarrollo/Fuentes/Backend
+cd ./Desarrollo/Fuentes/Backend
 ```
 
 2. 
@@ -52,7 +52,7 @@ python manage.py runserver
 
 1. 
 ```
-cd ./terrAI/Desarrollo/Fuentes/Frontend/terrai-frontend-app
+cd ./Desarrollo/Fuentes/Frontend/terrai-frontend-app
 ```
 
 2. 

@@ -9,31 +9,36 @@ import os
 from django.conf import settings
 from .ai_service import AIService
 
+
 @method_decorator(csrf_exempt, name='dispatch')
 class AIAnalysisView(View):
     def post(self, request):
-        # verificar si hay archivos en la solicitud
         if 'file' not in request.FILES:
             return JsonResponse({'status': 'error', 'message': 'No file provided'}, status=400)
 
-        # obtener el archivo de la solicitud
         image = request.FILES['file']
-     
+        
         # definir la ruta para almacenar temporalmente la imagen
         image_path = os.path.join(settings.MEDIA_ROOT, 'tempimg.jpg')
-     
-        # escribir la imagen en el disco
-        with open(image_path, 'wb') as f:
-            for chunk in image.chunks():
-                f.write(chunk)
-
+        
+        # agregar un registro para verificar la ruta del archivo
+        print(f"Saving image to: {image_path}")
+        
+        try:
+            with open(image_path, 'wb') as f:
+                for chunk in image.chunks():
+                    f.write(chunk)
+            print(f"Image saved to: {image_path}")
+        except Exception as e:
+            print(f"Error saving image: {str(e)}")
+            return JsonResponse({'status': 'error', 'message': f'Error saving image: {str(e)}'}, status=500)
+        
         # instanciar el servicio de IA y realizar el análisis
         ai_service = AIService()
         result = ai_service.analyze_images(image_path)
-     
-        # devolver el resultado del análisis como respuesta JSON
+        
         return JsonResponse({'status': 'success', 'result': result})
-
+    
 @method_decorator(csrf_exempt, name='dispatch')
 class LoginView(View):
     def post(self, request):
