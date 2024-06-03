@@ -38,7 +38,7 @@ const LoginForm = () => {
     <div className="login">
       <div className="container-header">
         <div className="logo">
-          <img src='logo.svg' alt="Logo" />
+          <img src="logo.svg" alt="Logo" />
         </div>
         <div className="container-text">
           <h1>Bienvenido</h1>
@@ -77,7 +77,7 @@ const LoginForm = () => {
           <div className="register-link">
             <p>
               No tienes una cuenta?{" "}
-              <Link to="/register">
+              <Link to="/signup">
                 <strong>Registrate aquí</strong>
               </Link>
             </p>
