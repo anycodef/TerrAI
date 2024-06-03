@@ -1,74 +1,130 @@
-
-
 .app-header {
-  position: fixed; 
-  top: 0;
-  left: 0;
+  position: fixed;
+  display: flex;
   width: 100vw;
   height: 70px;
-  display: flex;
+  padding: 4px 24px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
-  background-color: #9aaccf;
-  padding: 0 20px;
-  box-sizing: border-box;
-  color: white;
-  box-shadow: 0px 0px 10px 0px gray;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(40, 48, 50, 0.25);
+  top: 0;
+  left: 0;
   z-index: 10000;
+  gap: auto;
 }
 
-.div-logo {
+.app-header .container-logo {
   display: flex;
-  width: 60px;
-  height: 60px;
-  background-color: #9aaccf;
-  border-radius: 14px;
+  padding: 5px 18px;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  align-self: stretch;
 }
 
-.div-logo:hover {
-  background-color: white;
-}
-
-.app-logo {
+.container-logo img {
+  width: 50px;
   height: 50px;
-  width: auto;
-  margin: 0;
 }
 
-.navigation {
+.links {
   display: flex;
   align-items: center;
-  width: 100%;
-  justify-content: space-around;
-} 
+  gap: 200px;
+  align-self: stretch;
+}
 
-.option {
+.body {
   display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 8px 16px;
   align-items: center;
+  gap: 24px;
+  align-self: stretch;
 }
 
-.option li {
-  margin: 0 10px;
+.body a {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
-.option a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.option a:hover {
+.body a:hover {
   text-decoration: underline;
-  color: white;
-  text-underline-offset: 10px;
 }
 
+.monitor {
+  display: flex;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+}
 
+.monitor a {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.monitor a:hover {
+  text-decoration: underline;
+}
+
+.buttons {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.buttons a {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.buttons a:hover {
+  text-decoration: underline;
+}
+
+.buttons button {
+  display: flex;
+  width: 100px;
+  padding: 10px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #293133;
+  color: white;
+  font-family: "Nunito";
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.buttons button:hover {
+  background: rgba(41, 49, 51, 0.8);
+}
 
 .app-main-body {
   position: relative;
@@ -77,6 +133,10 @@
   margin: 0;
   min-height: 100vh;
   width: 99vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0px;
 }
 
 .app-footer {
@@ -91,4 +151,3 @@
   padding: 20px;
   box-sizing: border-box;
 }
-

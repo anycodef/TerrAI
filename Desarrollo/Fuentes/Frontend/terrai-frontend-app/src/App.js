@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -8,46 +14,34 @@ import Login from "./pages/Login";
 import Sign_Up from "./pages/RegisterForm/Sign-Up";
 import RegisterForm from "./pages/RegisterForm/Register";
 import Monitor from "./pages/Monitor";
+import logo from "./pages/Assets/terrAI.svg";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header className="app-header">
-          <a href="/">
-            <div className="div-logo">
-              <img src="logo.svg" alt="Logo Terrai" className="app-logo" />
+          <div className="container-logo">
+            <a href="/">
+              <img src={logo} alt="Logo Terrai" className="app-logo" />
+            </a>
+          </div>
+
+          <navbar className="links">
+            <div className="body">
+              <Link to="/">Inicio</Link>
+              <a href="/about">Acerca de</a>
+              <a href="/contact">Contacto</a>
             </div>
-          </a>
 
-          <nav className="navigation">
-            <ul className="main-option option">
-              <li>
-                <Link to="/">Inicio</Link>
-              </li>
-              <li>
-                <Link to="/about">Acerca de</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contacto</Link>
-              </li>
-            </ul>
-
-            <ul className="tool-option option">
-              <li>
-                <Link to="/to-monitor">Monitorear</Link>
-              </li>
-            </ul>
-
-            <ul className="right-option option">
-              <li>
-                <Link to="/login">Iniciar sesión</Link>
-              </li>
-              <li>
-                <Link to="/Signup">Registrarse</Link>
-              </li>
-            </ul>
-          </nav>
+            <div className="monitor">
+              <Link to="/to-monitor">Monitorear</Link>
+            </div>
+          </navbar>
+          <div className="buttons">
+            <Link to="/login">Iniciar sesión</Link>
+            <RegisterButton />
+          </div>
         </header>
 
         <main className="app-main-body">
@@ -67,6 +61,19 @@ function App() {
         </footer>
       </div>
     </Router>
+  );
+}
+
+function RegisterButton() {
+  const navigate = useNavigate();
+  const handleRegisterClick = () => {
+    navigate("/signup");
+  };
+
+  return (
+    <button type="button" onClick={handleRegisterClick}>
+      Registrarse
+    </button>
   );
 }
 
