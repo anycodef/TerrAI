@@ -30,8 +30,8 @@ function App() {
           <navbar className="links">
             <div className="body">
               <Link to="/">Inicio</Link>
-              <a href="/about">Acerca de</a>
-              <a href="/contact">Contacto</a>
+              <Link to="/about">Acerca de</Link> {/* cambiar a Link */}
+              <Link to="/contact">Contacto</Link> {/* cambiar a Link */}
             </div>
 
             <div className="monitor">

@@ -1,6 +1,4 @@
 import json
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
@@ -9,12 +7,16 @@ import os
 from django.conf import settings
 from .ai_service import AIService
 
+# datos de usuario en memoria
+users = {
+    "wsdwsd@asdfg": "123456",
+}
 
 @method_decorator(csrf_exempt, name='dispatch')
 class AIAnalysisView(View):
     def post(self, request):
         if 'file' not in request.FILES:
-            return JsonResponse({'status': 'error', 'message': 'No file provided'}, status=400)
+            return JsonResponse({'status': 'error', 'message': 'no file provided'}, status=400)
 
         image = request.FILES['file']
         
@@ -22,36 +24,39 @@ class AIAnalysisView(View):
         image_path = os.path.join(settings.MEDIA_ROOT, 'tempimg.jpg')
         
         # agregar un registro para verificar la ruta del archivo
-        print(f"Saving image to: {image_path}")
+        print(f"saving image to: {image_path}")
         
         try:
             with open(image_path, 'wb') as f:
                 for chunk in image.chunks():
                     f.write(chunk)
-            print(f"Image saved to: {image_path}")
+            print(f"image saved to: {image_path}")
         except Exception as e:
-            print(f"Error saving image: {str(e)}")
-            return JsonResponse({'status': 'error', 'message': f'Error saving image: {str(e)}'}, status=500)
+            print(f"error saving image: {str(e)}")
+            return JsonResponse({'status': 'error', 'message': f'error saving image: {str(e)}'}, status=500)
         
-        # instanciar el servicio de IA y realizar el análisis
+        # instanciar el servicio de ia y realizar el análisis
         ai_service = AIService()
         result = ai_service.analyze_images(image_path)
         
         return JsonResponse({'status': 'success', 'result': result})
-    
+
 @method_decorator(csrf_exempt, name='dispatch')
 class LoginView(View):
     def post(self, request):
         data = json.loads(request.body)
         email = data.get('email')
         password = data.get('password')
-     
-        user = authenticate(request, username=email, password=password)
-        if user is not None:
-            login(request, user)
-            return JsonResponse({'message': 'Login successful'})
+        
+        print(f"received login attempt: {email}, {password}")  # agregar mensaje de depuración
+        
+        # verificar credenciales
+        if email in users and users[email] == password:
+            print("authentication successful")  # mensaje de depuración
+            return JsonResponse({'message': 'login successful'})
         else:
-            return JsonResponse({'error': 'Invalid credentials'}, status=400)
+            print("authentication failed")  # mensaje de depuración
+            return JsonResponse({'error': 'invalid credentials'}, status=400)
 
 @method_decorator(csrf_exempt, name='dispatch')
 class RegisterView(View):
@@ -59,9 +64,12 @@ class RegisterView(View):
         data = json.loads(request.body)
         email = data.get('email')
         password = data.get('password')
-     
-        user = User.objects.create_user(username=email, email=email, password=password)
-        return JsonResponse({'message': 'User registered successfully'})
+        
+        # registrar nuevo usuario
+        if email in users:
+            return JsonResponse({'error': 'user already exists'}, status=400)
+        users[email] = password
+        return JsonResponse({'message': 'user registered successfully'})
 
 @method_decorator(csrf_exempt, name='dispatch')
 class MapDataView(View):

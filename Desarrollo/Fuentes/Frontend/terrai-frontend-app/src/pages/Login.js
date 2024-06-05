@@ -1,6 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { login } from "../services/api";  // importar la función de login desde api.js
 import "./Login.css";
 
 const LoginForm = () => {
@@ -17,23 +17,20 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Imprime en consola los credenciales ingresadas por el usuario
-    console.log("Email:", email);
-    console.log("Password:", password);
 
-    // Credenciales predefinidas
-    const validEmail = "admin@example.com";
-    const validPassword = "123456789";
-
-    // Verifica las credenciales
-    if (email === validEmail && password === validPassword) {
-      navigate("/"); // Al dahsboard Inicio
-    } else {
-      setErrorMessage("Credenciales incorrectas. Inténtalo de nuevo.");
+    try {
+      const response = await login(email, password);  // llamar a la función de login
+      console.log("login successful:", response);  // mensaje de depuración
+      setErrorMessage("");  // limpiar mensaje de error
+      navigate("/");  // redirigir al dashboard Inicio en caso de éxito
+    } catch (error) {
+      console.error("login error:", error.response ? error.response.data.error : error.message);  // mensaje de depuración
+      setErrorMessage(error.response ? error.response.data.error : "Error desconocido. Inténtalo de nuevo.");  // mostrar el mensaje de error en caso de fallo
     }
   };
+
   return (
     <div className="login">
       <div className="container-header">
